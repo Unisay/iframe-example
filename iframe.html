@@ -6,10 +6,18 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <style>
-        h2 {
+        body {
             font-family: 'Ubuntu', sans-serif;
-            color: darkgray;
+            color: #666666;
+        }
+        h2 {
             text-align: right;
+        }
+        ul {
+            margin: 3em;
+        }
+        ul > li {
+            margin: 1em;
         }
         #notify {
             position: absolute;
@@ -18,7 +26,12 @@
     </style>
 </head>
 <body>
-    <h2>Widget inside I-frame</h2>
+    <h2>I-frame content provided by Adidas</h2>
+    <ul>
+        <li>Widget inside iframe uses "window.content.postMessage()" to send any message to the host page.</li>
+        <li>Host page receives message and does necessary actions, e.g. puts an article into the shopping cart.</li>
+        <li>Its possible to have a two-way communication between host page and widget inside iframe using messages. </li>
+    </ul>
     <button id="notify">Add to the Shopping Cart</button>
     <script language="JavaScript">
     var i = 1;
