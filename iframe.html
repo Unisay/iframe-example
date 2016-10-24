@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Framed widget</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+        h2 {
+            font-family: 'Ubuntu', sans-serif;
+            color: darkgray;
+            text-align: right;
+        }
+        #notify {
+            position: absolute;
+            bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Widget inside I-frame</h2>
+    <button id="notify">Add to the Shopping Cart</button>
+    <script language="JavaScript">
+    var i = 1;
+    $("#notify").on("click", function(event) {
+        event.preventDefault();
+        window.content.postMessage(i++, "*");
+    });
+    </script>
+</body>
+</html>
