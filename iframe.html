@@ -35,9 +35,10 @@
     <button id="notify">Add to the Shopping Cart</button>
     <script language="JavaScript">
     var i = 1;
+    var parentWindow = window.content || window.parent;
     $("#notify").on("click", function(event) {
         event.preventDefault();
-        window.content.postMessage(i++, "*");
+        parentWindow.postMessage(i++, "*");
     });
     </script>
 </body>
